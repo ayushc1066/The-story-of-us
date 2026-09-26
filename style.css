@@ -1,0 +1,413 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #17120e;
+    color: #3b291d;
+    font-family: Georgia, "Times New Roman", serif;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.cover-page {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px 15px;
+
+    background: #17120e;
+}
+
+.cover {
+    width: min(90vw, 430px);
+
+    display: flex;
+    justify-content: center;
+}
+
+.cover img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.open-button {
+    margin-top: 25px;
+
+    padding: 12px 28px;
+
+    border: 1px solid #b89463;
+    border-radius: 30px;
+
+    background: #ead6ad;
+    color: #4a2d1c;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   PAGE 1 — VINTAGE STORYBOOK
+========================= */
+
+.story-page {
+    display: none;
+
+    min-height: 100vh;
+    padding: 22px 14px;
+
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 248, 220, 0.45),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(105, 68, 35, 0.14),
+            transparent 30%
+        ),
+        #d8bf91;
+
+    overflow-y: auto;
+}
+
+.book-page {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 92vh;
+
+    padding: 55px 38px 35px;
+
+    background:
+        linear-gradient(
+            rgba(247, 232, 195, 0.97),
+            rgba(229, 205, 157, 0.97)
+        );
+
+    border: 1px solid #8b6844;
+
+    box-shadow:
+        0 0 0 6px #291b12,
+        0 0 0 8px #9a7548,
+        0 18px 45px rgba(45, 27, 15, 0.5);
+
+    overflow: hidden;
+}
+
+
+/* INNER VINTAGE BORDER */
+
+.book-page::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border: 1px solid rgba(116, 78, 43, 0.45);
+
+    pointer-events: none;
+}
+
+
+/* CORNER DECORATION */
+
+.book-page::after {
+    content: "❦";
+
+    position: absolute;
+
+    top: 22px;
+    right: 27px;
+
+    color: rgba(126, 88, 48, 0.55);
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   CHAPTER
+========================= */
+
+.chapter {
+    margin: 0;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #806044;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.story-page h1 {
+    margin: 15px 0 5px;
+
+    text-align: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: #43281c;
+
+    font-size: clamp(31px, 8vw, 46px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+
+/* =========================
+   ORNAMENT
+========================= */
+
+.ornament {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin: 17px auto 30px;
+
+    width: min(100%, 350px);
+
+    color: #91683e;
+
+    font-size: 23px;
+}
+
+.ornament::before,
+.ornament::after {
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: rgba(126, 88, 48, 0.45);
+}
+
+
+/* =========================
+   STORY TEXT
+========================= */
+
+.story {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    max-width: 520px;
+
+    margin: auto;
+
+    color: #4d3628;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    line-height: 1.85;
+
+    text-align: left;
+}
+
+
+/* PARAGRAPHS */
+
+.story p {
+    margin: 0 0 21px;
+}
+
+
+/* DROP CAP */
+
+.story p:first-child::first-letter {
+    float: left;
+
+    padding-right: 8px;
+    padding-top: 5px;
+
+    color: #70462b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 57px;
+
+    line-height: 43px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FINAL LINES
+========================= */
+
+.story .ending {
+    margin-top: 35px;
+
+    margin-bottom: 5px;
+
+    text-align: center;
+
+    color: #5c3b27;
+
+    font-style: italic;
+
+    font-size: 19px;
+
+    line-height: 1.6;
+}
+
+.story .ending span {
+    font-size: 23px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   PAGE NUMBER
+========================= */
+
+.page-number {
+    position: relative;
+
+    z-index: 2;
+
+    margin-top: 28px;
+
+    text-align: center;
+
+    color: #806044;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+}
+
+
+/* =========================
+   TURN THE PAGE BUTTON
+========================= */
+
+.next-button {
+    position: relative;
+
+    z-index: 3;
+
+    display: block;
+
+    margin: 20px auto 0;
+
+    padding: 10px 22px;
+
+    border: 1px solid #8b6844;
+    border-radius: 3px;
+
+    background: rgba(126, 88, 48, 0.06);
+
+    color: #5b3b27;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.next-button:hover {
+    background: rgba(126, 88, 48, 0.13);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(70, 42, 24, 0.12);
+}
+
+.next-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   PHONE
+========================= */
+
+@media (max-width: 500px) {
+
+    .story-page {
+        padding: 5px 10px;
+    }
+
+    .book-page {
+        min-height: 94vh;
+
+        padding: 35px 22px;
+    }
+
+    .story {
+        font-size: 16px;
+
+        line-height: 1.8;
+    }
+
+    .story p {
+        margin-bottom: 19px;
+    }
+
+    .story-page h1 {
+        font-size: 32px;
+    }
+
+    .chapter {
+        font-size: 10px;
+
+        letter-spacing: 4px;
+    }
+
+}
